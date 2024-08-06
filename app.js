@@ -1,18 +1,10 @@
-const title = document.querySelector("div.hello:first-child h1");
-console.log(title);
+const loginInput = document.querySelector("#login-form input");
+const loginButton = document.querySelector("#login-form button");
 
-title.style.color = "blue";
 
-function helloWorld() {
-    console.log("hello world!");
+function onClick(){
+    console.log(loginInput.value);
+    alert(loginInput.value);
 }
-function changeColorRed() {
-    title.style.color = "red"
-}
-function changeColorBlue() {
-    title.style.color = "blue"
-}
-title.addEventListener("click",helloWorld);
 
-title.addEventListener("mouseenter",changeColorRed);
-title.addEventListener("mouseleave",changeColorBlue);
+loginButton.addEventListener("click",onClick)

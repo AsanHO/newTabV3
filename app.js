@@ -1,9 +1,13 @@
+const HIDDEN = "hidden";
+const USERNAME = "username";
+
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const loginButton = document.querySelector("#login-form button");
 const welcomeText = document.querySelector("h1");
 
-const HIDDEN = "hidden";
+const savedUsername = localStorage.getItem(USERNAME);
+
 
 function onClick(){
     console.log(loginInput.value);
@@ -15,6 +19,7 @@ function onSubmit(event){
     const username = loginInput.value;
     // console.log(event);
     // console.log(username);
+    localStorage.setItem(USERNAME,username);
     loginForm.classList.add(HIDDEN);
     welcomeText.classList.remove(HIDDEN);
     welcomeText.innerText = `환영합니다. ${username}`;
@@ -22,3 +27,9 @@ function onSubmit(event){
 
 loginForm.addEventListener("submit",onSubmit);
 loginButton.addEventListener("click",onClick);
+
+if (savedUsername !== null){
+    loginForm.classList.add(HIDDEN);
+    welcomeText.classList.remove(HIDDEN);
+    welcomeText.innerText = `환영합니다. ${savedUsername}`;
+}

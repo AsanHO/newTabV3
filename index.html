@@ -11,10 +11,16 @@
     <form id="login-form">
         <input required maxlength="10" type="text" placeholder="이름, 여기, 입력">
         <button>로그인</button>
-        
     </form>
+    <div>
+    <form id="todo-form">
+        <input id="todo-input" type="text" placeholder="할일 적어" required>
+    </form>
+    <ul id="todo-list"></ul>
+    </div>
     <h1 class="hidden"></h1>
-    <p id="clock"></p>
+    <h2 id="clock"></h2>
+    <script src="todo.js"></script>
     <script src="login.js"></script>
     <script src="clock.js"></script>
 </body>
